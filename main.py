@@ -33,3 +33,9 @@ with st.sidebar:
     
     st.markdown("---")
     st.markdown("**Note:** Translating large files may take time.")
+
+# Upload File PDF
+uploaded_file = st.file_uploader("Upload your PDF file", type=["pdf"])
+
+# Translate button
+translate_button = st.button("Start translation", type="primary")
