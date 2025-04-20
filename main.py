@@ -39,3 +39,42 @@ uploaded_file = st.file_uploader("Upload your PDF file", type=["pdf"])
 
 # Translate button
 translate_button = st.button("Start translation", type="primary")
+
+# Show results
+result_container = st.container()
+
+if translate_button and uploaded_file is not None:
+    with st.spinner("Processing file PDF..."):
+        # Reading content PDF
+        pdf_reader = PdfReader(uploaded_file)
+        text = ""
+        for page in pdf_reader.pages:
+            text += page.extract_text() + "\n"
+        
+        # Show summary of main content
+        with result_container:
+            st.subheader("Main contents PDF:")
+            st.text_area("Original text", text, height=200, disabled=True)
+            
+            st.subheader(f"Translation into language {target_language}:")
+            
+            # Simulate translation with DeepSeek (in practice, the real API must be used)
+            with st.spinner(f"Translating to {target_language}..."):
+                # This section should be replaced with the actual DeepSeek API                
+                # Example of a mock translation for demonstration
+                translated_text = f"[This text will be translated into {target_language}]\n\n{text[:500]}..."
+                
+                st.text_area("Translated text", translated_text, height=400)
+                
+                # Download translation button
+                st.download_button(
+                    label="Download translation as TXT",
+                    data=translated_text,
+                    file_name=f"translated_{uploaded_file.name.split('.')[0]}_{target_language}.txt",
+                    mime="text/plain"
+                )
+                
+                st.success("Translation completed successfully.!")
+elif translate_button and uploaded_file is None:
+                st.warning("Please upload a PDF file first.")
+
