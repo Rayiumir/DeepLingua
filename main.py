@@ -78,3 +78,28 @@ if translate_button and uploaded_file is not None:
 elif translate_button and uploaded_file is None:
                 st.warning("Please upload a PDF file first.")
 
+# App Guide
+with st.expander("User Guide"):
+    st.markdown("""
+**How ​​to use PDF Translator:**
+
+1. Upload your PDF file using the upload button at the top.
+2. Select the target language from the side menu.
+3. Specify the translation quality level.
+4. Click the "Start Translation" button.
+5. After processing is complete, the translation will be displayed.
+6. You can download the translation as a text file.
+
+**Note:**
+- This app uses DeepSeek AI for translation.
+- The translation quality depends on the complexity of the text and the target language.
+- For large files, translation may take several minutes.
+""")
+
+# Footnote
+st.markdown("---")
+st.markdown("""
+<div style="text-align: center;">
+<p>Built with Streamlit and DeepSeek AI | Version 1.0</p>
+</div>
+""", unsafe_allow_html=True)
