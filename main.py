@@ -4,7 +4,7 @@ from huggingface_hub import InferenceClient
 import time
 
 # Add Huggingface API Key
-Huggingface_API_KEY = "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"
+Huggingface_API_KEY = "API_KEY"
 
 # Models
 MODEL = "meta-llama/Llama-4-Scout-17B-16E-Instruct" #Changing Huggingface models
