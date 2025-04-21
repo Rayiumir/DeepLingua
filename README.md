@@ -1,6 +1,6 @@
 # DeepLingua - PDF Translator using Huggingface
 
-A simple web-based app built with **Streamlit** to translate PDF files into multiple languages using the powerful **Huggingface** model.
+A simple web-based app built with **Streamlit** to translate PDF files into multiple languages using the powerful **[Huggingface](https://huggingface.co/)** model.
 
 # Features
 
